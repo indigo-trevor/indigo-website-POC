@@ -33,7 +33,8 @@ body,
 .st-container {
   position: relative;
   overflow: hidden;
-  background: url(http://i.imgur.com/S5bKt4s.jpg) 0 0 repeat; }
+  background: url(http://i.imgur.com/PteVvRN.gif) 0 0 no-repeat;
+  background-size: cover; }
 
 .st-pusher {
   position: relative;
