@@ -30,11 +30,9 @@ body,
 .st-content-inner {
   position: relative; }
 
-.st-container {
+.st-menu-open {
   position: relative;
-  overflow: hidden;
-  background: url(http://i.imgur.com/PteVvRN.gif) 0 0 no-repeat;
-  background-size: cover; }
+  overflow: hidden; }
 
 .st-pusher {
   position: relative;
@@ -71,7 +69,7 @@ body,
   visibility: hidden;
   width: 300px;
   height: 100%;
-  background: #48a770;
+  background: transparent;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
@@ -129,6 +127,9 @@ body,
   box-shadow: inset 0 -1px transparent;
   color: #fff; }
 
+.st-container {
+  overflow: hidden; }
+
 /* Effect 11: Scale and rotate pusher */
 .st-effect-11.st-container {
   -webkit-perspective: 1500px;
@@ -139,8 +140,8 @@ body,
   transform-style: preserve-3d; }
 
 .st-effect-11.st-menu-open .st-pusher {
-  -webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
-  transform: translate3d(100px, 0, -600px) rotateY(-20deg); }
+  -webkit-transform: translate3d(100px, 0, -600px) rotateY(16deg);
+  transform: translate3d(100px, 0, -600px) rotateY(16deg); }
 
 .st-effect-11.st-menu {
   opacity: 1;
@@ -161,5 +162,186 @@ body,
 .no-csstransforms3d .st-pusher,
 .no-js .st-pusher {
   padding-left: 300px; }
+
+.hamburger {
+  position: relative;
+  left: 20px;
+  top: 10px; }
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s; }
+
+.c-hamburger:focus {
+  outline: none; }
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 18px;
+  right: 18px;
+  height: 8px;
+  background: white; }
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #fff;
+  content: ""; }
+
+.c-hamburger span::before {
+  top: -20px; }
+
+.c-hamburger span::after {
+  bottom: -20px; }
+
+.c-hamburger--htra {
+  background-color: #ff9650; }
+
+.c-hamburger--htra span {
+  transition: transform 0.1s; }
+
+.c-hamburger--htra span::before {
+  transform-origin: top left;
+  transition: transform 0.1s, width 0.1s, top 0.1s; }
+
+.c-hamburger--htra span::after {
+  transform-origin: bottom left;
+  transition: transform 0.1s, width 0.1s, bottom 0.1s; }
+
+/* active state, i.e. menu open */
+.c-hamburger--htra.is-active {
+  background-color: #e95d00; }
+
+.c-hamburger--htra.is-active span {
+  transform: rotate(180deg); }
+
+.c-hamburger--htra.is-active span::before,
+.c-hamburger--htra.is-active span::after {
+  width: 50%; }
+
+.c-hamburger--htra.is-active span::before {
+  top: 0;
+  transform: translateX(-8px) translateY(4px) rotate(-45deg); }
+
+.c-hamburger--htra.is-active span::after {
+  bottom: 0;
+  transform: translateX(-8px) translateY(-4px) rotate(45deg); }
+
+.video--bg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: url(http://i.imgur.com/PteVvRN.gif) 0 0 no-repeat;
+  background-size: cover; }
+
+#nav-icon {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 50px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer; }
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #1E5C7F;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out; }
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon span:nth-child(2) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon span:nth-child(3) {
+  top: 36px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center; }
+
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px; }
+
+#nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0; }
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 39px;
+  left: 8px; }
+
+#st-trigger-effects {
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  z-index: 99999; }
+
+.nav-close {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99; }
 
 /*# sourceMappingURL=main.css.map */
